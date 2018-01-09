@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>Day 7</title>
+		<style>
+			body {
+				width: 1000px;
+				height: 500px;
+				background-color:#fff;
+				background-image: url("helloworld.png.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 20%; /* -o- 前綴詞，有些瀏覽器可能不支援功能，加上以解決。*/
+				/*background-size: cover;  -moz- 前綴詞，有些瀏覽器可能不支援功能，加上以解決。*/
+			}
+			.listA{
+				/*list-style-type: lower-latin;*/
+				list-style-image: url(aaa.gif);
+				color: black;
+				font-size: 200%;
+				font-family: calibri;
+				letter-spacing: 20px;
+			}
+			h1{
+				border: solid blue 20px; <!-- 可以寫在一起 -->
+				font-size: 50px;
+				padding: 20px 50px 70px 10px; /* 內距 - 上右下左 */
+				margin: 40px 30px 50px 100px; /* 外距 - 上右下左 */
+				box-sizing: border-box;
+			}
+			b{
+				font-size: 50px;
+				border-style: solid;
+				padding: 50px 50px 40px 10px; /* 內距 - 上右下左 */
+				margin: 40px 30px 40px 100px; /* 外距 - 上右下左 */
+			}
+			p{
+				border-style: solid;
+				display: inline;
+				font: calibri 50px yellow;
+			}
+
+		</style>
+	</head>
+	<body>
+		<p> block -> inline</p> <!-- 可透過display更改至 block或inline (雙向)-->
+		<b>inline1</b> <!-- 如果有重複給予區塊內、外距，會給定最大的 -->
+		<b>inline2</b>
+		<h1>block1</h1> <!-- 區塊 (block) <div> 都有 -->
+		<h1>block2</h1> <!-- 區塊 (block) <div> 都有 -->
+
+		<ul class = "listA">
+			<li>Circle</li>
+			<li>Square</li>
+			<li>Triangle</li>
+		</ul>
+		<nav></nav> <!-- 選單連結 -->
+
+	</body>
+</html>

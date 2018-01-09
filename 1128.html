@@ -1,0 +1,97 @@
+<!doctype html>
+
+<!-- Can I use可以查目前使用到的參數，是否支援某瀏覽器某版本 -->
+<!-- Visualhunt/Unsplash/創用CC 免費圖庫 -->
+<!-- youtube音效庫 免費音效庫 -->
+
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title> Course 2 </title>
+	</head>
+	<body title = "image" style="background-color:white;"> 
+		<!-- 在 標籤裡面加上 title = "XXX"，滑鼠滑到上面會出現預覽文字 -->
+		<!-- 在 標籤裡面加上 alt = "XXX"，增加網頁或物件屬性，增強SEO -->
+		<!-- style body只能塞在 body 標籤裡面 -->
+		<form>
+			姓名： <input type="text" placeholder = "給我輸入你的名字" required> <!-- required (必填欄位) placeholder (灰字在框裡) -->
+			<br>
+			Email： <input type="email" required>
+			<br>
+			密碼： <input type="password" required> <!-- 顯示 ****** --> 
+			<br>
+			性別： <!-- 單選式 -->
+				男<input type="radio" value = "boy" name = "gender" checked> <!-- name = "xxx" 變成同群組，就只能單選 --> <!-- checked預設打勾 -->
+				女<input type="radio" value = "girl" name = "gender"><br>
+			興趣： <!-- 勾選式複選 -->
+				<input type = "checkbox" value = "sing" name = "interesting" checked> 唱歌 <!-- checked預設打勾 -->
+				<input type = "checkbox" value = "run" name = "interesting"> 跑步
+				<input type = "checkbox" value = "dance" name = "interesting"> 跳舞
+				<input type = "checkbox" value = "handsomeBoy" name = "interesting"> 當帥哥
+			<br>
+			學歷：
+				<select> 
+					<option value = "junior">國中</option> <!-- selected 預設選擇 -->
+					<option value = "senior">高中</option>
+					<option value = "university">大學</option>
+					<option value = "GraduateSchool">研究所</option>
+				</select>
+			<br>
+			意見：<textarea cols = "50" rows = "5" maxlength = "30" placeholder = "最多輸入30個字元"></textarea><br> <!-- maxlength可以輸入的最多字元 -->
+			<input type = "color">　
+			<br>
+			<input type = "submit" value = "Sbmt"> <!-- 送出button -->
+			<input type = "reset" value = "Reset">
+		</form>
+		
+		<!-- 插入音訊  controls是用來控制的-->
+		<!--<audio controls autoplay = "autoplay"> 
+			<source src = "source/Sicilian_Breeze.mp3" type = "audio/mpeg">
+		</audio> -->
+		
+		<!-- <video width = "1000"  height = "800" controls = "controls" autoplay = "autoplay">
+			<source src = "source/MS.mp4" type = "video/mp4">
+		</video> -->
+		
+		<iframe width="1000" height="800" src="https://www.youtube.com/embed/j2311FZWoFQ" frameborder="0" gesture="media" allowfullscreen>
+		</iframe>
+		
+		<!-- <img src = "http://www.123telugu.com/content/wp-content/uploads/2016/09/cropped-123_512X512_alpha_Red-192x192.png" width = "500" length = "500" alt = "123"> 如果只指定一個的數字，會維持原本比例 -->
+		<img src = "images/lake.jpg" width = "1400" length = "1000" >
+		
+		<table  border = "100" width = "300" bgcolor = "tomato" cellpadding = "50">
+			<tr> <!-- tr/td不能顛倒 -->
+				<td align = "right" colspan = "2" rowspan = "2">111</td>
+				 <!-- <th>222</th> th 表格內粗體 -->
+				<td>333</td> <!-- 合併儲存格(欄) -->
+				<td> 789 </td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "center">444</td>
+			</tr>
+			<tr>
+				<th colspan = "4">444</th> <!-- 合併儲存格(列) -->
+			</tr>
+		</table>
+		
+	</body>
+	
+	<body>
+		<p style = "background:rgb(104, 218, 159) ; border:1px solid dodgerblue;color:black">  <!-- 會自動移除多的空白，保留一個或需要的 -->
+			<strong> This paragraph </strong> 
+			<mark>contains</mark>      a lot of spaces
+			<q>in the source     code,</q>
+			but the    browser 
+			ignores it.
+		</p>
+		<pre style = "background:rgba(255, 99, 71, 0.5);color:white"> <!-- 文字前空行 <del>為刪除線 -->
+			<del>My Bonnie</del> lies over the ocean.
+			<ins>My Bonnie</ins> lies over the sea.
+			My Bonnie lies over the ocean.  Oh, bring back my Bonnie to me.
+			<abbr title = "what the fuck" style = "font-size:300%"><b>WTF</abbr>
+		</pre>
+	</body>
+	<hr>
+	上面分隔線
+	</hr>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+
+<!-- 清除浮動(區塊重疊)的4種方式:
+					1.給 container高度
+					2.針對後面加的 div清除浮動 : clear: both
+					3.針對 container 自動判別區塊 : overflow: auto
+					4.給予 container clearfix (常用!!!!!!)
+ -->
+
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title> Day7-2 </title>
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Varela+Round" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Questrial|Varela+Round" rel="stylesheet">
+		<style>
+			.clearfix::after{
+				content:"";
+				display:block;
+				clear:both;
+			}
+			.container {
+				width: 1280px;
+				margin: auto;
+			}
+			
+			.left {
+				width: 540px;
+				height: 400px;
+				float: left;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			.right {
+				width: 540x;
+				height: 400px;
+				float: right;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			.right img {
+				width: 540px;
+				background-size: cover;
+				/*position: absolute;
+				buttom: 20px;
+				left: 20px;*/
+			}
+			.container h1 {
+				font-size: 50px;
+				text-align: center;
+			}
+			.container h2 {
+				font-size: 48px;
+				text-align: center;
+			}
+			.container p {
+				font-family: Varela Round;
+				text-align: center;
+				color: #666;
+				line-height: 1.5em;
+			}
+			.container a {
+				font-family:Questrial;
+				display: block; /* a是行內，無法設定字體及一些設定 */
+				width: 80px;
+				padding: 8px;
+				text-decoration: none;
+				color: #000;
+				border-bottom: 3px solid #000; /* 記得要指定 邊框類型 */
+				text-align: center;
+				margin: auto; /* margin-auto(外距) 只對水平有效(水平居中)*/
+				
+			}
+			.aaa{
+				height: 960px; /* 沒有塞高度不會有東西 */
+				background-color: #CCC;
+				background-image: url(9871793185_7c1e931069_h.jpg);
+				background-size: cover;
+				box-sizing: border-box;
+			}
+			.primary{
+				font-family: Dancing Script;
+				font-size: 70px;
+				color: #ffcd47;
+				position: absolute;
+				left : 310px;
+				bottom: 620px;
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<div class = "container clearfix">
+			<div class = "left">
+				<h2><b>OUR STORE</b></h2>
+				<p>Voluptatibus quaerat laboriosam fugit non Ut consequatur animi est molestiae enim a voluptate totam natus modi debitis dicta impedit voluptatum quod sapiente illo saepe explicabo quisquam perferendis labore et illum suscipit</P>
+				<a href = "https://demo.onepagetemplates.com/html/resto/#" target = "_blank">ABOUT US</a>
+			</div>
+			<div class = "right">
+				<img src = "images/img_1.jpg"></img>
+			</div>
+		</div>
+		<div><h1 class = "primary">Discovers</h1></div>
+		<div class = "aaa"></div>
+	</body>
+</html>

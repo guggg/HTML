@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title> Day8 - 排列實做 </title>
+		<style>
+			body {
+				background-color: #a8ddcd;
+				position: relative;
+			}
+			h2,ul,li{
+				margin:0;
+				padding:0;
+			}
+
+			.top h2 {
+				font-family: "微軟正黑體";
+				margin: 0;
+				position: absolute;
+				bottom: 0px;
+				padding: 10px 20px;
+			}
+			.box {
+				width: 500px;
+				height: 600px;
+				background-color: #fff;
+				margin: auto; /* 在body中水平置中 */
+				margin-top: 100px;
+			}
+			.top {
+				position: relative;
+				color: white;
+				height: 360px;
+				background-image: url(9871793185_7c1e931069_h.jpg);
+				background-size:cover;
+				background-repeat: no-repeat;
+			}
+			.buttom{
+				padding: 5px 20px;
+				height: 240px;
+			}
+			li {
+				font-family: "微軟正黑體";
+			}
+			.top .tag{
+				width: 30px;
+				height: 45px;
+				background-color: #a8ddcd;
+				position: absolute;
+				top: 0;
+				right: 20px;
+			}
+			.top .circle{
+				width: 60px;
+				height: 60px;
+				background-color: #a8ddcd;
+				border-radius:50%;
+				position: absolute;
+				right: 20px;
+				bottom: -30px;
+			}
+			.buttom ul {
+				list-style-type: none;
+				margin-top: 25px;
+			}
+			.buttom ul li {
+				padding: 5px 15px;
+			}
+			.buttom ul li span {
+				font-weight: bold;
+			}
+			.buttom a{
+				display: block;
+				width: 150px;
+				height: 40px;
+				background-color: #a8ddcd;
+				text-decoration:none; /* 沒有邊框線 */
+				text-align: center; /* 水平置中 */
+				line-height: 40px; /* 垂直置中 */
+				color: white;
+				float: left; /* 浮起來 */
+				margin-top: 35px; /* 有一個35px的外距 */
+				margin-left: 20px;
+				margin-right: 20px;
+
+			}
+			.buttom .website {
+				transition:all .3s
+			}
+			.buttom .website:hover {
+				background-color:#42f4b0;
+			}
+			.buttom .more{
+				float: right;
+				border: 1px solid black;
+				background-color: transparent;
+				color: black;
+				transition:all .3s;
+			}
+			.buttom .more:hover {
+				background-color:#CCC;
+			}
+			.buttom a span{
+				font-weight: bold;
+				letter-spacing: 2px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class = "box">
+			<div class = "top">
+				<h2>海邊的卡夫卡 IlluminationBooks</h2>
+				<div class = "tag"></div>
+				<div class = "circle"></div>
+			</div>
+			
+			<div class = "buttom">
+				<ul>
+					<li><span>地址</span>：10491台北市中山區民權西路36-1</li>
+					<li><span>電話</span>： 02 2522 3196</li>
+					<li><span>開放時間</span>： 今日正常營業 · 08:00–22:00</li>
+				</ul>
+				<a href = "" class = "website"><span>前往網站</span></a>
+				<a href = "" class = "more"><span>更多訊息</span></a>
+			</div>
+		</div>
+	</body>
+</html>

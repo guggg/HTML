@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<!-- 會先寫一些需要重置設定或是設定大小，前幾個 -->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>website imitate</title>
+	<link href="https://fonts.googleapis.com/css?family=Bungee|Itim|Libre+Baskerville|Pacifico|Roboto+Mono|Shadows+Into+Light" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Itim, Libre Baskerville, Bungee, Shadows Into Light, Pacifico, Roboto Mono -->
+	<style>
+		*{
+			font-family: Itim;
+		}
+		body, h1, h2, h3, h4, h5, h6, ul, li, p{ /* 重置內、外距*/
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix::after{ /* clearfix 清除浮動 */
+			content: "";
+			display: block;
+			clear: both;
+		}
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+		img{
+			width: 100%;
+		}
+		.fixed-width{ /* 將想要的版面設定大小及位置 */
+			width: 960px;
+			margin: auto;
+		}
+		.full-width{
+			width: 100%;
+		}
+		.circle .col-2{ /* 事先做好版面設置，包括平均放置 */
+			width: calc(50% - 30px); /*calc()讓CSS幫你計算 */
+			height: 100px;
+			margin: 0 15px;
+			background-color: blue;
+			float: left;
+			line-height: 100px;
+			text-align: center;
+		}
+		.menu .col-3{
+			width: calc(100% / 3 - 40px);
+			float: left;
+			margin: 0 20px;
+		}
+		.submenu .col-3{
+			padding: 20px;
+			height: auto;
+			width: 280px;
+			float: left;
+			margin: 0 20px;
+			box-sizing: border-box;
+		}
+		.col-4{
+			width: calc(100% / 4 - 30px);
+			float: left;
+			margin: auto;
+		}
+		nav .orange{
+			color: #FF6A0F;
+		}
+		nav{
+			background-color: transparent; /* 背景變透明，便於顯示圖片*/
+			position: fixed;
+		}
+		nav .logo{
+			float: left;
+			height: 44px;
+			line-height: 44px;
+			color: #fff;
+			font-size: 32px;
+			border: 1px solid #fff;
+			margin: 12px 0;
+			margin-top: 10px;
+		}
+		nav ul{
+			float: right;
+		}
+		nav li{
+			list-style-type: none;
+			float: left;
+			font-size: 18px;
+		}
+		nav ul li a{
+			display: block;
+			height: 70px;
+			line-height: 70px;
+			text-align: center;
+			color: #fff;
+			padding-left: 15px;
+		}
+		header {
+			background-image: url(jpn_people.jpg);
+			background-repeat: no-repeat;
+			padding: 280px 0;
+			background-size: cover;
+			background-position: center;
+		}
+		header{
+			text-align: center;
+			font-weight: bold;
+		}
+		header h1{
+			font-family: Roboto Mono;
+			font-size: 48px;
+			color: #FFF;
+		}
+		header h3{
+			font-family: Roboto Mono;
+			font-size: 32px;
+			color: #FFF;
+			font-style: italic;
+		}
+		header hr{
+			width: 720px;
+			height: 1.5px;
+			background-color: #FFF;
+		}
+		header a{
+			font-size: 36px;
+			font-style: bold;
+			color: #F00;
+			display: block;
+			width: 258px;
+			height: 75px;
+			line-height: 75px;
+			text-align: center;
+			margin: auto;
+			background-color: rgba(255,255, 255, .8); /*rgba，a代表透明度 */
+			border-radius: 5px;
+			margin-top: 50px;
+			font-family: Bungee;
+			margin-bottom: 30px;
+		}
+		header .col-3{
+			background-color: #000;
+			height: 160px;
+			transition: all 0.3s;
+			/*padding: 0 15px;*/
+			box-sizing: border-box;
+			border: 1px solid #000;
+			border-radius: 15px;
+		}
+		.fixed-width h3{
+			color: #F00;
+		}
+		header p, h4{
+			color: #FFF;
+		}
+		.menu h2{
+			color: #FFF;
+		}
+		.submenu p, h4{
+			color: #000;
+		}
+		header .menu p {
+			width :400px;
+			margin: auto;
+			font-size: 20px;
+		}
+		header h4{
+			font-size: 24px;
+		}
+		header .icon{
+			border-radius: 50%;
+			border: 2px solid #000;
+			padding: 6px;
+		}
+		header .col-3:hover{
+			background-color: rgba(255, 255, 255, .5);
+		}
+		.p1{
+			line-height: 60px;
+		}
+		header .whiteblock{
+			margin-top: 50px;
+			height: 200px;
+			background-color: #fff;
+		}
+		header .whiteblock .wbp{
+			color: #f00;
+			float: left;
+			line-height: 200px;
+			width: 60%;
+			font-size: 20px;
+			margin-left: 50px;
+			font-family: Libre Baskerville;
+		}
+		header .whiteblock .cta{
+			width: 230px;
+			font-size: 20px;
+			background-color: #CCC;
+			float: right;
+			margin-right: 200px;
+			background-color: #f00;
+			color: #fff;
+			font-family: Arial;
+		}
+		.wtd {
+			color: #fff;
+			font-size: 58px;
+			font-family: Shadows Into Light;
+		}
+		.subtitle {
+			color: #fff;
+			font-size: 38px;
+			font-family: Shadows Into Light;
+		}
+		.submenu .col-3{
+			background-color: #fff;
+			border: #fff;
+			margin-top: 50px
+		}
+		#gallery{
+			width: 800px;
+			margin: 50px auto;
+		}
+		#holdPick img{
+			width: 100px;
+		}
+		.blockPicture{
+			width: 480px;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="full-width clearfix">
+		<div class="fixed-width"> <!-- nav置中 -->
+			<div class="logo">Feature<span class="orange">D</span></div>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Services</a></li>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Team</a></li>
+				<li><a href="">Store</a></li>
+				<li><a href="">Testimonial</a></li>
+				<li><a href="">News</a></li>
+				<li><a href="">Contact Us</a></li>
+			</ul>
+		</div>
+	</nav>
+	<header class="full-width clearfix">
+		<h1>Beautiful WordPress Business Theme</h1>
+		<hr>
+		<h3 class"sub">Cleanly Coded With User Friendly Interface</h3>
+		<a href="">BUY NOW</a>
+		<div class="menu clearfix">
+			<div class="col-3">
+				<div class="icon fa fa-eye fa-2x"></div><!-- icon從 'iconawesome來的'，裡面的fa .... 是程式碼。 -->
+				<h2>Reality:</h2>
+				<p class = "p1">Nothing fucks you more than time.</p>
+			</div>
+			<div class="col-3">
+				<div class="icon fa fa-adjust fa-2x"></div>
+				<h2>Condition:</h2>
+				<p class = "p2">We always want to be the best one, but life always fucks up with you.</p>
+			</div>
+			<div class="col-3">
+				<div class="icon fa fa-certificate fa-2x"></div>
+				<h2>Redemption:</h2>
+				<p class = "p3">Although your whole life with terrible things, lover always be with you.</p>
+			</div>
+		</div>
+		<div class="whiteblock full-width clearfix">
+			<p class="wbp">Easy to step up, just take a few steps and your website is ready within a minute</p>
+			<a href="" class="cta">Call to action</a>
+		</div>
+		<div class="fixed-width">
+			<div class="submenu clearfix">
+				<h3 class="wtd">What we do</h3>
+				<h5 class="subtitle">This is subtitle</h5>
+				<div class="col-3">
+					<div class="subicon fa fa-rocket fa-2x"></div>
+					<h3>Rocket</h3>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="subicon fa fa-hand-lizard-o fa-2x"></div>
+					<h3>HandDuck</h3>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="subicon fa fa-wheelchair fa-2x"></div>
+					<h3>Wheelchair</h3>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+			</div>
+			<div class="submenu clearfix">
+				<div class="col-3">
+					<div class="subicon fa fa-money fa-2x"></div>
+					<h3>Money</h3>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="subicon fa fa-magnet fa-2x"></div>
+					<h3>Smiling face</h3>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="subicon fa fa-question fa-2x"></div>
+					<h3>Q Mark</h3>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+			</div>
+			<div class="circle full-width clearfix">
+				<div class="col-2">123</div>
+				<div class="col-2">456</div>
+			</div>
+		</div>
+		<hr id = "blockPicture">
+		<div id = "gallery">
+			<img src="https://images.unsplash.com/photo-1512938336590-0b8761b2762c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=800&fit=crop&s=c0c517891618587f007eb94b5256c393" alt="">
+		</div>
+
+		<div id="holdPick">
+			<img src="https://images.unsplash.com/photo-1512938336590-0b8761b2762c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=800&fit=crop&s=c0c517891618587f007eb94b5256c393" alt="">
+			<img src="https://images.unsplash.com/photo-1511283408945-65a38c055808?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=800&fit=crop&s=7560565f95b967e28a9a24ad99152fff" alt="">
+			<img src="https://images.unsplash.com/photo-1511090116771-2b6b9a165071?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=800&fit=crop&s=5291353d98291d482a87da7b23e03d83" alt="">
+			<img src="https://images.unsplash.com/photo-1510680865842-cbda31c2ef99?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=800&fit=crop&s=8bbf79b6d58b8257316278d1d3276022" alt="">
+			<img src="https://images.unsplash.com/photo-1499937208889-968c8c650a9f?auto=format&fit=crop&w=800&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+			<img src="https://images.unsplash.com/photo-1510680659752-e56d1ea20721?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=800&fit=crop&s=268a0dc124be2dccb7e983f592ae8426" alt="">
+		</div>
+	</header>
+	<script type="text/javascript">
+		var gallery = document.getElementById("gallery").children[0];
+		var holdPick = document.getElementById("holdPick").children;
+		console.log(gallery);
+		console.log(holdPick);
+		for (var i = 0 ; i < holdPick.length; i++){
+			holdPick[i].onmouseover = function(){
+				// var newImg = this.getAttribute("src");
+				gallery.setAttribute("src", this.getAttribute("src"));
+			}
+		}
+	</script>
+
+</body>
+</html>

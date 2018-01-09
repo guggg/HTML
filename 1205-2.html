@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title> Day7-2 </title>
+		
+		<style>
+			.clearfix::after{
+				content:"";
+				display:block;
+				clear:both;
+			}
+			.container{
+				/*height: 50px;*/ <!-- 利用高度隔開其他區塊 -->
+				/*overflow: auto;*/ <!-- 自動判斷區塊，使區塊保有一定界線 -->
+			}
+			.box {
+				border: 1px solid #000;
+				width: 300px;
+				float: left;
+				height: 20px;
+				padding: 4px;
+			}
+			.qqq{
+				height: 500px;
+				background-color: #CCC;
+				/*clear: both;<!-- 消除float -->*/
+				/*overflow: auto;*/
+			}
+			.iphone8 {
+			overflow: hidden; <!-- 隱藏超過區塊的東西 -->
+			}
+			.www {
+				width: 120px;
+				height: 50px;
+				background-color: tomato;
+			}
+			.www::before {  <!-- 區塊前面，偽元素: 它並不是真正網頁裡的元素，但行為與表現又和真正網頁元素一樣，也可以對其使用 CSS 操控。 -->
+				content: "前面";
+				background-color: blue;
+			}
+			.www::after { <!-- 區塊後面，偽元素: 它並不是真正網頁裡的元素，但行為與表現又和真正網頁元素一樣，也可以對其使用 CSS 操控。 -->
+				content: "後面";
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "container clearfix">
+			<div class = "box iphone8">Iphone8</div>
+			<div class = "box iphonex">IphoneX</div>
+		</div>
+		<div class = "qqq"></div>
+		<div class = "www">middle</div>
+	</body>
+</html>
